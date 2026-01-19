@@ -31,36 +31,7 @@ var profile = {
     ]
 };
 
-var profile = {
-    bio: {
-        first: "Miguel",
-        last: "O'hara",
-        title: "Spider-Man 2099",
-        about: "He's the spiderman of the future, working as a geneticist at Alchemax, one day he is drugged and mutated to become a superhuman. He hides his identity from everyone while accidentally fighting crime."
-    }, 
 
-    social: [
-        { facebook: "N/A"},
-        { X: "N/A" },
-        { youtube: "N/A" },
-        { linkedIn: "N/A" }
-    ],
-    edu: {
-        name: "Tyler Stone's school",
-        major: "Science"
-    },
-    career: {
-        company: "Alchemax",
-        title: "Head Geneticist",
-        role: "geneticist"
-    },
-
-    skills: [
-        { title: "web-shooting", level: 50 },
-        { title: "claws", level: 20 },
-        { title: "Fighting Skills", level: 70 }
-    ]
-};
 
 const img = document.querySelector("#profile-img");
 const nameEl = document.querySelector("#profile-name");
