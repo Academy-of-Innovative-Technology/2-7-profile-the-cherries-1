@@ -38,3 +38,78 @@ const contactEl = document.querySelector("#profile-contact");
 const socialEl = document.querySelector("#social-links");
 const aboutEl = document.querySelector("#about-text");
 const skillsEl = document.querySelector("#skills-section");
+
+function loadProfile(profile) {
+   
+    nameEl.innerText = `${profile.bio.first} ${profile.bio.last}`;
+    titleEl.innerText = profile.bio.title;
+
+
+    aboutEl.innerText = profile.bio.about;
+
+
+    contactEl.innerHTML = `
+        <li><i class="fas fa-building me-2"></i>${profile.career.company}</li>
+        <li><i class="fas fa-user-tie me-2"></i>${profile.career.title}</li>
+        <li><i class="fas fa-graduation-cap me-2"></i>${profile.edu.name} - ${profile.edu.major}</li>
+    `;
+
+
+    socialEl.innerHTML = "";
+    profile.social.forEach(s => {
+        // Extract key and value dynamically
+        const key = Object.keys(s)[0];
+        const value = s[key];
+
+      
+
+        let iconClass = "";
+        if(key.toLowerCase() === "facebook") iconClass = "fab fa-facebook-f";
+        else if(key.toLowerCase() === "x") iconClass = "fab fa-twitter";
+        else if(key.toLowerCase() === "youtube") iconClass = "fab fa-youtube";
+        else if(key.toLowerCase() === "linkedin") iconClass = "fab fa-linkedin-in";
+        else iconClass = "fas fa-user";
+
+        socialEl.insertAdjacentHTML("beforeend", `
+            <li>
+                <a href="#" class="rounded-3" title="${value}">
+                    <i class="${iconClass}"></i>
+                </a>
+            </li>
+        `);
+    });
+
+    img.src = "https://i.imgur.com/6XKQZQp.jpg"; // you can replace with actual URL
+
+    skillsEl.innerHTML = "";
+    profile.skills.forEach(skill => {
+        skillsEl.insertAdjacentHTML("beforeend", `
+            <div class="mb-3 skill-bar">
+                <div class="d-flex justify-content-between">
+                    <strong>${skill.title}</strong>
+                    <span>${skill.level}%</span>
+                </div>
+                <input type="range" min="0" max="100" value="0" class="form-range">
+            </div>
+        `);
+    });
+
+    animate(profile.skills);
+    addHoverEffects();
+}
+
+function animate(skills) {
+    const ranges = document.querySelectorAll(".form-range");
+    ranges.forEach((range, index) => {
+        let current = 0;
+        let target = skills[index].level;
+        if(target > 100) target = 100; // cap at 100
+
+        const interval = setInterval(() => {
+            current++;
+            range.value = current;
+            if(current >= target) clearInterval(interval);
+        }, 10);
+    });
+}
+loadProfile(profile);
