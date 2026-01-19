@@ -31,6 +31,37 @@ var profile = {
     ]
 };
 
+var profile = {
+    bio: {
+        first: "Miguel",
+        last: "O'hara",
+        title: "Spider-Man 2099",
+        about: "He's the spiderman of the future, working as a geneticist at Alchemax, one day he is drugged and mutated to become a superhuman. He hides his identity from everyone while accidentally fighting crime."
+    }, 
+
+    social: [
+        { facebook: "N/A"},
+        { X: "N/A" },
+        { youtube: "N/A" },
+        { linkedIn: "N/A" }
+    ],
+    edu: {
+        name: "Tyler Stone's school",
+        major: "Science"
+    },
+    career: {
+        company: "Alchemax",
+        title: "Head Geneticist",
+        role: "geneticist"
+    },
+
+    skills: [
+        { title: "web-shooting", level: 50 },
+        { title: "claws", level: 20 },
+        { title: "Fighting Skills", level: 70 }
+    ]
+};
+
 const img = document.querySelector("#profile-img");
 const nameEl = document.querySelector("#profile-name");
 const titleEl = document.querySelector("#profile-title");
@@ -79,7 +110,7 @@ function loadProfile(profile) {
         `);
     });
 
-    img.src = "https://i.imgur.com/6XKQZQp.jpg"; // you can replace with actual URL
+    img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRerHSOQ3Gom42y77GBdDDdnX7Ps9bxpyXb9g&s"; 
 
     skillsEl.innerHTML = "";
     profile.skills.forEach(skill => {
