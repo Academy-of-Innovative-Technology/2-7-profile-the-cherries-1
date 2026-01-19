@@ -9,8 +9,8 @@ var profile = {
     }, 
 
     social: [
-        { facebook: "@spiderman"},
-        { X: "Spider-Man" },
+        { facebook: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.facebook.com/spiderman/&ved=2ahUKEwiS_LLaupaSAxWgFVkFHaKxDx8QFnoECCMQAQ&usg=AOvVaw0e1a6k0xLa0oKLlRq8V20u"},
+        { X: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://x.com/SpiderMan&ved=2ahUKEwiwtuXYupaSAxV6GFkFHVp0DR4QFnoECB4QAQ&usg=AOvVaw0CT3ZbkE9_wUBNddOsGo9I" },
         { youtube: "N/A" },
         { linkedIn: "N/A" }
     ],
